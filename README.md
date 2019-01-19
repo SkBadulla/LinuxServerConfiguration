@@ -229,7 +229,8 @@ as authorized redirect URI.
       ErrorLog ${APACHE_LOG_DIR}/error.log
       LogLevel warn
       CustomLog ${APACHE_LOG_DIR}/access.log combined
-  </VirtualHost>```
+  </VirtualHost>
+  ```
   - Enable the virtual host `sudo a2ensite catalog`
 
   Enabling site catalog.
