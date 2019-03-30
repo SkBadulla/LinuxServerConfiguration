@@ -5,7 +5,7 @@ This is the final project for Udacity's [Full Stack Web Developer Nanodegree](ht
 This page explains how to secure and set up a Linux distribution on a virtual machine, install and configure a web and database server to host a web application. 
 - The Linux distribution is [Ubuntu](https://www.ubuntu.com/download/server) 16.04 LTS.
 - The virtual private server is [Amazon](https://lightsail.aws.amazon.com/).
-- The web application is my [Item Catalog project](https://github.com/boisalai/udacity-catalog-app) created earlier in this Nanodegree program.
+- The web application is my [Item Catalog project](https://github.com/SkBadulla/catalog) created earlier in this Nanodegree program.
 - The database server is [PostgreSQL](https://www.postgresql.org/).
 
 You can visit http://54.161.86.157/ or http://ec2-54-161-86-157.compute-1.amazonaws.com/ for the website deployed.
@@ -15,7 +15,7 @@ You can visit http://54.161.86.157/ or http://ec2-54-161-86-157.compute-1.amazon
 
   - Login to *[aws.amazon.com](https://console.aws.amazon.com)* and login to default user (ubuntu)
   - Choose EC2 and Launch Instance with appropriate settings.
-  - Check for instance IPv4 public IP - 3.87.52.54
+  - Check for instance IPv4 public IP - 54.161.86.157
   - we can download a .pem file and connect with following command
     ```
     ssh -i ItemCatalog_19_01_2019.pem ubuntu@54.161.86.157
@@ -212,7 +212,7 @@ as authorized redirect URI.
   <VirtualHost *:80>
       ServerName 54.161.86.157.xip.io
       ServerAlias ec2-54-161-86-157.compute-1.amazonaws.com
-      ServerAdmin ubuntu@54.210.140.47
+      ServerAdmin ubuntu@54.161.86.157
       WSGIDaemonProcess catalog python-path=/var/www/catalog:/var/www/catalog/catalog/venv3/lib/python3.6/site-packages
       WSGIProcessGroup catalog
       WSGIScriptAlias / /var/www/catalog/catalog.wsgi
@@ -272,7 +272,7 @@ The following prompt will be returned:
 ### Step 13.5: Launch the Web Application
 
 - Restart Apache again: `sudo service apache2 restart`.
-- Open your browser to http://13.59.39.163 or http://ec2-13-59-39-163.us-east-2.compute.amazonaws.com.
+- Open your browser to http://54.161.86.157 or http://ec2-54-161-86-157.compute-1.amazonaws.com.
 
 ### Step 14: Automatically install updates(optional)
 
